@@ -19,10 +19,7 @@ var trueShift = 0, shift = 0;
 
 const animate = function() {
     shift = (trueShift + shift * 9) / 10;
-    console.info(shift + " " + trueShift);
-
     camera.position.z = shift * -0.06 + 5;
-
 	requestAnimationFrame(animate);
     renderer.render(scene, camera);
 };
@@ -30,6 +27,7 @@ animate();
 
 function scroll() {
     trueShift = -document.body.getBoundingClientRect().top;
+    renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function resize() {
     camera.setAspect(window.innerWidth / window.innerHeight);
