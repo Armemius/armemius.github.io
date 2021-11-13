@@ -78,6 +78,7 @@ main {
     width: 80%;
     padding-left: 10%;
     padding-right: 10%;
+    padding-bottom: 5%;
     color: black;
     background-color: white;
 }
@@ -97,6 +98,14 @@ main {
     grid-template-columns: 1fr 1fr;
 }
 
+@media only screen and (max-aspect-ratio: 4/3) {
+    .projGrid {
+        display: grid;
+        grid-template-rows: 60px 0 auto auto;
+        grid-template-columns: 100%;
+    }
+}
+
 .projImg img {
     width: 100%;
     padding-bottom: 10px;
@@ -107,6 +116,10 @@ main {
     width: 90%;
     padding-left: 5%;
     padding-right: 5%;
+}
+
+.projDescription p {
+    padding-bottom: 15px;
 }
 
 .projDescription a {
