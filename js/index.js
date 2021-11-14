@@ -28,6 +28,7 @@ class Abouts extends React.Component {
                 </p>
                 <ul>
                     <h3>My skillset:</h3>
+                    <li>Certified B2 English level</li>
                     <li>Frontend: HTML, CSS and Javascript</li>
                     <li>Backend: C#, Java and C++</li>
                     <li>Git commands + git flow</li>
