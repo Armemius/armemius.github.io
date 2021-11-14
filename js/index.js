@@ -93,9 +93,9 @@ class Contacts extends React.Component {
             <div className="container">
                 <div id="contactsContent">
                     <h2>Contact me</h2>
-                    <p>Here</p>
-                    <p>Here</p>
-                    <p>And Here</p>
+                    <p>My vk: <a href="https://vk.com/rusgy_cufu">@rusgy_cufu</a></p>
+                    <p>My tg: @armemius</p>
+                    <p>My email: rusgy@yandex.ru</p>
                 </div>
             </div>
         );

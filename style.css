@@ -6,7 +6,7 @@
 * {
     margin: 0;
     padding: 0;
-    font-family: 'OpenSansConsidered', sans-serif;
+    font-family: 'OpenSansConsidered';
 }
 
 canvas {
@@ -117,15 +117,26 @@ main {
     padding-bottom: 30px;
     color: black;
     background-color: white;
+    font-family: 'OpenSansConsidered', sans-serif;
 }
 
 .project h3 {
     font-size: 40px;
+    font-style: normal;
 }
 
 .project .lang {
     font-size: 30px;
+    font-style: normal;
     color: #3e8d70;
+}
+
+.project p {
+    font-style: normal;
+}
+
+.project a {
+    font-style: normal;
 }
 
 .projGrid {
@@ -185,6 +196,16 @@ main {
 
 #contacts p {
     font-size: 30px;
+}
+
+#contacts a {
+    text-decoration: none;
+    color: #54b893aa;
+}
+
+#contacts a:hover {
+    text-decoration: none;
+    color: #54b893;
 }
 
 #contactsContent {

@@ -16,10 +16,16 @@ const ambientLight = new THREE.AmbientLight(0xffffff);
 scene.add(ambientLight);
 
 var trueShift = 0, shift = 0;
+var trueMouseX = 0, mouseX = 0;
+var trueMouseY = 0, mouseY = 0;
 
 const animate = function() {
     shift = (trueShift + shift * 9) / 10;
+    mouseX = (trueMouseX + mouseX * 2) / 3;
+    mouseY = (trueMouseY + mouseY * 2) / 3;
     camera.position.z = shift * -0.06 + 5;
+    camera.rotation.y = (mouseX - 0.5) * -0.1;
+    camera.rotation.x = (mouseY - 0.5) * -0.1;
 	requestAnimationFrame(animate);
     renderer.render(scene, camera);
 };
@@ -33,12 +39,17 @@ function resize() {
     camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
+function mouseHandler(event) {
+    trueMouseX = event.clientX / window.innerWidth;
+    trueMouseY = event.clientY / window.innerHeight;
+}
 
 document.body.onscroll = scroll;
 document.body.onresize = resize;
+document.addEventListener('mousemove', mouseHandler);
 
-for (var i = 0; i < 500; ++i) {
-    for (var j = 0; j < 10; ++j) {
+for (let i = 0; i < 400; ++i) {
+    for (let j = 0; j < 40; ++j) {
         const geometry = new THREE.SphereGeometry();
         const material = new THREE.MeshStandardMaterial( { color: 0xCCCCFF} );
         const star = new THREE.Mesh( geometry, material );
@@ -46,8 +57,8 @@ for (var i = 0; i < 500; ++i) {
         star.scale.set(size, size, size)
         star.position.z = -i;
         
-        star.position.x = Math.random() * 300 - 150;
-        star.position.y = Math.random() * 300 - 150;
+        star.position.x = Math.random() * 500 - 250;
+        star.position.y = Math.random() * 500 - 250;
         scene.add(star);
     }
 }
