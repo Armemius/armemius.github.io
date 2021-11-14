@@ -5,7 +5,7 @@ const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector("#background"),
     antialias: true,
 });
-renderer.setSize(window.innerWidth, window.innerHeight );
+renderer.setSize(window.screen.width, window.screen.height);
 
 camera.position.z = 5;
 
@@ -37,7 +37,7 @@ function scroll() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function resize() {
-    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
+    //camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function mouseHandler(event) {
@@ -50,7 +50,7 @@ document.body.onresize = resize;
 document.addEventListener('mousemove', mouseHandler);
 
 for (let i = 0; i < 400; ++i) {
-    for (let j = 0; j < 40; ++j) {
+    for (let j = 0; j < 20; ++j) {
         const geometry = new THREE.SphereGeometry();
         const material = new THREE.MeshStandardMaterial( { color: 0xCCCCFF} );
         const star = new THREE.Mesh( geometry, material );
@@ -58,8 +58,8 @@ for (let i = 0; i < 400; ++i) {
         star.scale.set(size, size, size)
         star.position.z = -i;
         
-        star.position.x = Math.random() * 500 - 250;
-        star.position.y = Math.random() * 500 - 250;
+        star.position.x = Math.random() * 400 - 200;
+        star.position.y = Math.random() * 400 - 200;
         scene.add(star);
     }
 }
