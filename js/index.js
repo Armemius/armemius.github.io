@@ -9,11 +9,34 @@ class Title extends React.Component {
     }
 }
 
+class Abouts extends React.Component {
+    render() {
+        return (
+            <div className="container">
+                <div className="centered">
+                    <h2>About me</h2>
+                </div>
+                <p>
+                    Veniam tempor ut ullamco excepteur cupidatat ut deserunt laborum dolor pariatur est irure velit. Voluptate ex laborum excepteur commodo quis veniam et commodo ullamco. Ea dolore incididunt mollit commodo et aliquip exercitation. Enim esse pariatur minim et exercitation ea nostrud voluptate fugiat labore anim. Consectetur ullamco magna proident qui ea minim eu fugiat in culpa sit ipsum nostrud occaecat. Sunt deserunt exercitation pariatur laboris dolore.
+                </p>
+                <p>
+                    Ya pazhiloy gibbon 64 goda
+                </p>
+                <ul>
+                    <h3>Ya mogu v</h3>
+                    <li>Amogus</li>
+                    <li>Dota</li>
+                    <li>Pivo</li>
+                </ul>
+            </div>
+        );
+    }
+}
+
 class Project extends React.Component {
     render() {
         return (
-            <div className="container project">
-                
+            <div className="container project">       
                 <div className="projGrid">
                     <i>
                         <h3>{this.props.name} <small class="lang">{this.props.lang}</small></h3>
@@ -41,7 +64,7 @@ class Projects extends React.Component {
                 <Project name="Fractals" lang="C++" 
                 img1="resources/img/fractal0.png" img2="resources/img/fractal1.png">
                     <p>Simple program that display several types of fractals, such as geometric, algebraic and stochastic, 
-                        you can navigate through and zoom fractals for better look. To run this project you need to install
+                        you can navigate through and zoom fractals for better view. To run this project you need to install
                         and configure SFML library in Visual Studio, or you can just run standalone version, which does not 
                         have any dependencies.
                     </p>
@@ -64,5 +87,22 @@ class Projects extends React.Component {
     }
 }
 
+class Contacts extends React.Component {
+    render() {
+        return (
+            <div className="container">
+                <div id="contactsContent">
+                    <h2>Contact me</h2>
+                    <p>Here</p>
+                    <p>Here</p>
+                    <p>And Here</p>
+                </div>
+            </div>
+        );
+    }
+}
+
 ReactDOM.render(<Title/>, document.getElementById("title"));
+ReactDOM.render(<Abouts/>, document.getElementById("abouts"));
 ReactDOM.render(<Projects/>, document.getElementById("projects"));
+ReactDOM.render(<Contacts/>, document.getElementById("contacts"));

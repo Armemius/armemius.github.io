@@ -1,5 +1,5 @@
 const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
+var camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
 
 const renderer = new THREE.WebGLRenderer({
     canvas: document.querySelector("#background")
@@ -30,7 +30,7 @@ function scroll() {
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 function resize() {
-    camera.setAspect(window.innerWidth / window.innerHeight);
+    camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
     renderer.setSize(window.innerWidth, window.innerHeight);
 }
 

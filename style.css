@@ -27,6 +27,11 @@ main {
     width: 100%;
 }
 
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
 #title {
     display: flex;
     justify-content: center;
@@ -61,6 +66,36 @@ main {
     width: 100%;
 }
 
+#abouts {
+    width: 50%;
+    margin: 0 20% 10% 20%;
+    padding: 0 5% 5% 5%;
+    background-color: #000000cc;
+}
+
+#aboutsContent {
+    display: flex;
+    justify-content: center;
+}
+
+#abouts p, #abouts ul {
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+
+#abouts ul {
+    list-style-type: square;
+}
+
+#abouts li {
+    margin-left: 30px;
+}
+
+#abouts h2 {
+    font-family: 'OpenSansConsidered';
+    font-size: 60px;
+}
+
 #projects {
     display: flex;
     justify-content: center;
@@ -76,9 +111,10 @@ main {
     display: flex;
     justify-content: center;
     width: 80%;
+    border-bottom: white 3px solid;
     padding-left: 10%;
     padding-right: 10%;
-    padding-bottom: 5%;
+    padding-bottom: 30px;
     color: black;
     background-color: white;
 }
@@ -129,4 +165,30 @@ main {
 
 .projDescription a:hover {
     color:rgb(27, 167, 27);
+}
+
+#contacts {
+    width: 100%;
+    height: 100vh;
+}
+
+#contacts .container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#contacts h2 {
+    font-size: 60px;
+}
+
+#contacts p {
+    font-size: 30px;
+}
+
+#contactsContent {
+    padding: 1% 5%;
+    background-color: #000000cc;
+    border: white solid 2px;
 }
