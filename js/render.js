@@ -52,7 +52,7 @@ document.addEventListener('mousemove', mouseHandler);
 for (let i = 0; i < 400; ++i) {
     for (let j = 0; j < 20; ++j) {
         const geometry = new THREE.SphereGeometry();
-        const material = new THREE.MeshStandardMaterial( { color: 0xCCCCFF} );
+        const material = new THREE.MeshBasicMaterial( { color: 0xCCCCFF} );
         const star = new THREE.Mesh( geometry, material );
         var size = 0.15;
         star.scale.set(size, size, size)

@@ -17,16 +17,26 @@ class Abouts extends React.Component {
                     <h2>About me</h2>
                 </div>
                 <p>
-                    Veniam tempor ut ullamco excepteur cupidatat ut deserunt laborum dolor pariatur est irure velit. Voluptate ex laborum excepteur commodo quis veniam et commodo ullamco. Ea dolore incididunt mollit commodo et aliquip exercitation. Enim esse pariatur minim et exercitation ea nostrud voluptate fugiat labore anim. Consectetur ullamco magna proident qui ea minim eu fugiat in culpa sit ipsum nostrud occaecat. Sunt deserunt exercitation pariatur laboris dolore.
-                </p>
-                <p>
-                    Ya pazhiloy gibbon 64 goda
+                   My name is Arseniy, I started learning programming
+                   since I was 14, in school. Later I entered the 
+                   C++ informatics group and graduated from it.
+                   While learning, I also studied other languages,
+                   such as C#, Java and Javascript. In process
+                   I developed several projects which you can 
+                   take a look at below.
+                   Now I'm looking towards starting a career.
                 </p>
                 <ul>
-                    <h3>Ya mogu v</h3>
-                    <li>Amogus</li>
-                    <li>Dota</li>
-                    <li>Pivo</li>
+                    <h3>My skillset:</h3>
+                    <li>Frontend: HTML, CSS and Javascript</li>
+                    <li>Backend: C#, Java and C++</li>
+                    <li>Git commands + git flow</li>
+                    <li><strike>Bash console</strike></li>
+                    <li><strike>Advanced OOP and patterns</strike></li>
+                    <li><strike>Unit testing</strike></li>
+                    <li><strike>Docker</strike></li>
+                    <li><strike>SQL</strike></li>
+                    <li><strike>Basic web security</strike></li>
                 </ul>
             </div>
         );
@@ -94,8 +104,8 @@ class Contacts extends React.Component {
                 <div id="contactsContent">
                     <h2>Contact me</h2>
                     <p>My vk: <a href="https://vk.com/rusgy_cufu">@rusgy_cufu</a></p>
-                    <p>My tg: @armemius</p>
-                    <p>My email: rusgy@yandex.ru</p>
+                    <p>My tg: <a href="https://web.telegram.org/">@armemius</a></p>
+                    <p>My email: <a href="mailto: rusgy@yandex.ru">rusgy@yandex.ru</a></p>
                 </div>
             </div>
         );
