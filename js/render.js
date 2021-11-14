@@ -2,7 +2,8 @@ const scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(90, window.innerWidth / window.innerHeight, 0.1, 150);
 
 const renderer = new THREE.WebGLRenderer({
-    canvas: document.querySelector("#background")
+    canvas: document.querySelector("#background"),
+    antialias: true,
 });
 renderer.setSize(window.innerWidth, window.innerHeight );
 
