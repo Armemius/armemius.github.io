@@ -1,5 +1,5 @@
 :root {
-    --decoration-gap: 30px;
+    --decoration-gap: 40px;
     --decoration-size: 50px;
     --decoration-width: 4px;
 
@@ -7,9 +7,9 @@
     --grey-decoration-width: 3px;
 }
 
-* {
+/* * {
     animation: redTextShadow 1.6s infinite;
-}
+} */
 
 .logo-decoration {
     position: absolute;
@@ -124,6 +124,51 @@
 
 .cross-decoration.bottom {
     bottom: var(--decoration-gap)
+}
+
+.startup-effects {
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10000;
+    background: black;
+    animation: fade 0.05s linear 0.85s forwards;
+}
+
+.startup-effects div {
+    pointer-events: none;
+    width: 0;
+    height: 0;
+    background-color: white;
+    animation: startupEffects 0.05s ease-out 0.8s forwards;
+}
+
+@keyframes startupEffects {
+    from {
+        width: 0;
+        height: 0;
+    }
+
+    80% {
+        width: 80%;
+        height: 10vh;
+    }
+
+    to {
+        width: 100%;
+        height: 100vh;
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: 100%;
+    }
+
+    to {
+        opacity: 0;
+    }
 }
 
 @keyframes flicker {

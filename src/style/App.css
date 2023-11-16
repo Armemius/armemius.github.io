@@ -14,3 +14,48 @@
     bottom: 0;
     right: 0;
 }
+
+.loading-screen-container {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    padding: 75px 100px;
+    font-family: 'Barlow', sans-serif;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.loading-screen-info > * {
+    display: none;
+}
+
+.loading-screen-header {
+    display: flex;
+    align-items: center;
+    gap: 70px;
+    font-size: 100px;
+}
+
+.loading-screen-header img {
+    animation: headerPulse 2s ease-in-out infinite;
+    height: 180px;
+    width: 180px;
+    pointer-events: none;
+}
+
+.loading-screen-info {
+    font-size: 32px;
+}
+
+@keyframes headerPulse {
+    from {
+        opacity: 100%;
+    }
+
+    50% {
+        opacity: 40%;
+    }
+
+    to {
+        opacity: 100%;
+    }
+}
