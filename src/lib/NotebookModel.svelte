@@ -23,7 +23,6 @@
     });
 
     renderer.setSize(canvas.width, canvas.height);
-    document.body.appendChild(renderer.domElement);
 
     const ambientLight = new THREE.AmbientLight(0xffffff, 0.8);
     scene.add(ambientLight);
