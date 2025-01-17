@@ -15,7 +15,13 @@
     "checkJs": true,
     "isolatedModules": true,
     "moduleDetection": "force",
-    "composite": true
+    "composite": true,
+
+    "baseUrl": ".",
+    "paths": {
+      "$lib/*": ["src/lib/*"],
+      "$assets/*": ["src/assets/*"]
+    }
   },
   "include": ["src/**/*.ts", "src/**/*.js", "src/**/*.svelte"]
 }
