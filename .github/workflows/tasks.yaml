@@ -112,10 +112,6 @@ jobs:
           sudo apt update
           sudo apt install rsync -y
 
-      - name: Install rsync on Remote Server
-        run: |
-          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "sudo apt update && sudo apt install -y rsync"
-
       - name: Set up SSH key
         run: |
           mkdir -p ~/.ssh
@@ -127,6 +123,10 @@ jobs:
       - name: Check Server Availability
         run: |
           ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "echo 'Server is reachable'"
+
+      - name: Install rsync on Remote Server
+        run: |
+          ssh -o StrictHostKeyChecking=no ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "sudo apt update && sudo apt install -y rsync"
 
       - name: Transfer Files to Server
         run: |
