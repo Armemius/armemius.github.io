@@ -36,6 +36,7 @@
   },
   "dependencies": {
     "@unocss/reset": "^65.4.2",
+    "svelte-material-ui": "^8.0.0-beta.3",
     "three": "^0.172.0"
   }
 }
