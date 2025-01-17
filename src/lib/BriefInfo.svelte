@@ -9,7 +9,7 @@
     связано
   </p>
   <div>
-    <Button outlined>Обо мне</Button>
-    <Button outlined>Мои проекты</Button>
+    <Button>Обо мне</Button>
+    <Button>Мои проекты</Button>
   </div>
 </article>
