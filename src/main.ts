@@ -1,6 +1,6 @@
 import { mount } from "svelte";
-import "virtual:uno.css";
 import "@unocss/reset/eric-meyer.css";
+import "virtual:uno.css";
 import App from "./App.svelte";
 
 const app = mount(App, {
