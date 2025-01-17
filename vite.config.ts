@@ -1,7 +1,7 @@
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
-import UnoCSS from 'unocss/vite'
-import path from 'path';
+import UnoCSS from "unocss/vite";
+import path from "path";
 
 // https://vite.dev/config/
 export default defineConfig({
@@ -9,8 +9,8 @@ export default defineConfig({
   base: "/",
   resolve: {
     alias: {
-      $lib: path.resolve('./src/lib'),
-      $assets: path.resolve('./src/assets')
+      $lib: path.resolve("./src/lib"),
+      $assets: path.resolve("./src/assets"),
     },
   },
 });
