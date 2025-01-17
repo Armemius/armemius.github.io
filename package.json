@@ -32,5 +32,8 @@
     "unocss": "^65.4.2",
     "vite": "^6.0.1",
     "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@unocss/reset": "^65.4.2"
   }
 }
