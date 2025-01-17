@@ -1,6 +1,7 @@
 <script lang="ts">
+  import Header from "$lib/Header.svelte";
 </script>
 
 <main>
-  <p>Sample text</p>
+  <Header />
 </main>
