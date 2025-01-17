@@ -6,8 +6,6 @@
 
   let canvas: HTMLCanvasElement;
 
-  const UPSCALE_FACTOR = 4;
-
   onMount(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
@@ -77,10 +75,7 @@
     window.addEventListener("resize", () => {
       camera.aspect = canvas.width / canvas.height;
       camera.updateProjectionMatrix();
-      renderer.setSize(
-        canvas.width * UPSCALE_FACTOR,
-        canvas.height * UPSCALE_FACTOR
-      );
+      renderer.setSize(canvas.width, canvas.height);
     });
 
     return () => {
@@ -89,10 +84,14 @@
   });
 </script>
 
-<canvas width="600" height="500" bind:this={canvas}></canvas>
+<div class="h-0 w-[600px] relative hidden md:block">
+  <canvas width="600" height="500" bind:this={canvas}></canvas>
+</div>
 
 <style>
   canvas {
     display: block;
+    position: relative;
+    transform: translateY(-50%);
   }
 </style>
