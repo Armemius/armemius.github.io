@@ -108,7 +108,13 @@ jobs:
         run: npm run build
 
       - name: Install packages
-        run: sudo apt install rsync
+        run: |
+          sudo apt update
+          sudo apt install rsync -y
+
+      - name: Install rsync on Remote Server
+        run: |
+          ssh ${{ secrets.REMOTE_USER }}@${{ secrets.REMOTE_HOST }} "sudo apt update && sudo apt install -y rsync"
 
       - name: Set up SSH key
         run: |
