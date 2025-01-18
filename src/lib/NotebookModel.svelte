@@ -54,6 +54,7 @@
     controls.enableDamping = true;
     controls.dampingFactor = 0.001;
     controls.enableZoom = false;
+    controls.enablePan = false;
 
     const initialAzimuthalAngle = controls.getAzimuthalAngle();
     const initialPolarAngle = controls.getPolarAngle();
