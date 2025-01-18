@@ -2,7 +2,7 @@ name: Website build & deployment (Development)
 
 on:
   push: { branches: development }
-  pull_request: { branches: development }
+  pull_request: { branches: main, development }
 
 jobs:
   lint-markdown:
