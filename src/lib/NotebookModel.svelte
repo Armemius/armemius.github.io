@@ -86,6 +86,7 @@
 </script>
 
 <div class="h-0 w-[600px] relative hidden md:block">
+  <div class="absolute top-[-300px] w-[600px] h-[600px] bg-violet rounded-[50%]"></div>
   <canvas width="600" height="500" bind:this={canvas}></canvas>
 </div>
 
