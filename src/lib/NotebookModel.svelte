@@ -3,8 +3,11 @@
   import * as THREE from "three";
   import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
   import { OrbitControls } from "three/addons/controls/OrbitControls.js";
+  import { Hourglass_full as Hourglass } from "svelte-google-materialdesign-icons";
+  import { fadeIn } from "$lib/animation/fadeIn";
 
   let canvas: HTMLCanvasElement;
+  let loaded = false;
 
   onMount(() => {
     const scene = new THREE.Scene();
@@ -36,6 +39,7 @@
         scene.add(gltf.scene);
         gltf.scene.scale.set(1, 1, 1);
         gltf.scene.position.set(0, 0, 0);
+        loaded = true;
       },
       undefined,
       (error) => {
@@ -54,6 +58,7 @@
     controls.enableDamping = true;
     controls.dampingFactor = 0.001;
     controls.enableZoom = false;
+    controls.enablePan = false;
 
     const initialAzimuthalAngle = controls.getAzimuthalAngle();
     const initialPolarAngle = controls.getPolarAngle();
@@ -84,8 +89,21 @@
   });
 </script>
 
-<div class="h-0 w-[600px] relative hidden md:block">
-  <canvas width="600" height="500" bind:this={canvas}></canvas>
+<div
+  use:fadeIn
+  class="h-0 w-[600px] relative hidden md:flex align-center justify-center"
+>
+  <div
+    class="absolute top-[-300px] w-[600px] h-[600px] bg-violet rounded-[50%]"
+  ></div>
+  <canvas class:loaded width="600" height="500" bind:this={canvas}></canvas>
+  {#if !loaded}
+    <div
+      class="rotating absolute z-9000 pointer-events-none bottom-[-32px] opacity-[0.3]"
+    >
+      <Hourglass size="64" />
+    </div>
+  {/if}
 </div>
 
 <style>
@@ -93,5 +111,25 @@
     display: block;
     position: relative;
     transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  canvas.loaded {
+    opacity: 1;
+  }
+
+  .rotating {
+    animation: rotate ease-in-out 3s infinite;
+  }
+
+  @keyframes rotate {
+    from {
+      transform: rotateZ(0deg);
+    }
+
+    to {
+      transform: rotateZ(360deg);
+    }
   }
 </style>
