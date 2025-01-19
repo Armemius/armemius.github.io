@@ -5,7 +5,7 @@ export interface FadeInOptions {
 
 export function fadeIn(
   node: HTMLElement,
-  { threshold = 0.1, duration = 400 }: FadeInOptions = {},
+  { threshold = 1.0, duration = 400 }: FadeInOptions = {},
 ): SvelteActionReturnType {
   const handleIntersect = (
     [entry]: IntersectionObserverEntry[],
