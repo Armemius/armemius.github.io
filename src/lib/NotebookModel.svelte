@@ -92,7 +92,7 @@
   <div
     class="absolute top-[-300px] w-[600px] h-[600px] bg-violet rounded-[50%]"
   ></div>
-  <canvas width="600" height="500" bind:this={canvas}></canvas>
+  <canvas class:loaded width="600" height="500" bind:this={canvas}></canvas>
   {#if !loaded}
     <div
       class="rotating absolute z-9000 pointer-events-none bottom-[-32px] opacity-[0.3]"
@@ -107,6 +107,12 @@
     display: block;
     position: relative;
     transform: translateY(-50%);
+    opacity: 0;
+    transition: 0.5s;
+  }
+
+  canvas.loaded {
+    opacity: 1;
   }
 
   .rotating {
