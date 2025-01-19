@@ -16,8 +16,8 @@
 </script>
 
 <article use:fadeIn class="relative mb-50 mr-20 flex flex-col gap-4">
-  <h1 class="text-10 font-500">Привет!</h1>
-  <p class="leading-9 text-6 font-350">
+  <h1 class="text-9 md:text-10 font-500">Привет!</h1>
+  <p class="leading-8 text-5 md:leading-9 md:text-6 font-350">
     Меня зовут <span class="color-#6200ee">Арсений</span>, я люблю
     программирование, компьютеры и всё, что с ними связано
   </p>
