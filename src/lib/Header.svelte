@@ -1,21 +1,10 @@
 <script lang="ts">
   import NotebookModel from "$lib/NotebookModel.svelte";
   import BriefInfo from "$lib/BriefInfo.svelte";
-  import { Keyboard_arrow_down as Arrow } from "svelte-google-materialdesign-icons";
-  import { fadeIn } from "./animation/fadeIn";
 
   export let element: HTMLElement;
   export let aboutSection: HTMLElement;
   export let projectsSection: HTMLElement;
-
-  const scrollToSection = (section: HTMLElement) => {
-    return () => {
-      section.scrollIntoView({
-        behavior: "smooth",
-        block: "start",
-      });
-    };
-  };
 </script>
 
 <section
