@@ -15,7 +15,7 @@
   >
     <div class="flex items-center gap-1">
       <i class:colored={isHovered} class={`${icon} text-13 md:m-1`}></i>
-      <span class="text-6 md:text-5">{tip}</span>
+      <span class="text-6 md:text-5 color-black">{tip}</span>
     </div>
   </button>
 </Tooltip>
