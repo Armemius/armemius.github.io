@@ -165,7 +165,7 @@
         нравится работать с различными технологиями, особенно в сфере системного
         программирования и информационной безопасности.
       </p>
-      <div class="flex gap-15 items-center justify-center mt-14">
+      <div class="flex flex-col md:flex-row gap-3 md:gap-15 items-center justify-center mt-14">
         <a
           href="https://t.me/armemius"
           target="_blank"
