@@ -5,17 +5,20 @@ export interface FadeInOptions {
 
 export function fadeIn(
   node: HTMLElement,
-  { threshold = 0.1, duration = 400 }: FadeInOptions = {}
+  { threshold = 0.1, duration = 400 }: FadeInOptions = {},
 ): SvelteActionReturnType {
-  const handleIntersect = ([entry]: IntersectionObserverEntry[], observer: IntersectionObserver) => {
+  const handleIntersect = (
+    [entry]: IntersectionObserverEntry[],
+    observer: IntersectionObserver,
+  ) => {
     if (entry.isIntersecting) {
       node.style.transition = `opacity ${duration}ms ease-out`;
-      node.style.opacity = '';
+      node.style.opacity = "";
       observer.disconnect();
     }
   };
 
-  node.style.opacity = '0';
+  node.style.opacity = "0";
 
   const observer = new IntersectionObserver(handleIntersect, { threshold });
   observer.observe(node);
