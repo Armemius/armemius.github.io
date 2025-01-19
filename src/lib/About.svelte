@@ -2,7 +2,7 @@
   import { fadeIn } from "./animation/fadeIn";
   import SkillsSection from "./SkillsSection.svelte";
   import TimelineSection from "./TimelineSection.svelte";
-
+  import Icon from "@iconify/svelte";
   export let element: HTMLElement;
 
   const programmingLanguages = [
@@ -165,6 +165,32 @@
         нравится работать с различными технологиями, особенно в сфере системного
         программирования и информационной безопасности.
       </p>
+      <div class="flex gap-15 items-center justify-center mt-14">
+        <a
+          href="https://t.me/armemius"
+          target="_blank"
+          class="flex flex-row items-center gap-2 font-150 color-black no-underline"
+        >
+          <Icon icon="mdi:telegram" class="text-6 md:text-7"></Icon>
+          <p class="text-5 md:text-6 leading-5 md:leading-6">Telegram</p>
+        </a>
+        <a
+          href="https://github.com/Armemius"
+          target="_blank"
+          class="flex flex-row items-center gap-2 font-150 color-black no-underline"
+        >
+          <Icon icon="mdi:github" class="text-6 md:text-7"></Icon>
+          <p class="text-5 md:text-6 leading-5 md:leading-6">Github</p>
+        </a>
+        <a
+          href="mailto:rusgy@yandex.ru"
+          target="_blank"
+          class="flex flex-row items-center gap-2 font-150 color-black no-underline"
+        >
+          <Icon icon="material-symbols:mail" class="text-6 md:text-7"></Icon>
+          <p class="text-5 md:text-6 leading-5 md:leading-6">E-Mail</p>
+        </a>
+      </div>
     </article>
     <article class="md:w-[80%] flex flex-col gap-3">
       <h2 class="text-6 md:text-7 leading-9 font-500">Навыки</h2>
