@@ -2,6 +2,10 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 button {
   background: none;
   outline: none;

@@ -1,6 +1,7 @@
 <script lang="ts">
   import { fadeIn } from "./animation/fadeIn";
   import SkillsSection from "./SkillsSection.svelte";
+  import TimelineSection from "./TimelineSection.svelte";
 
   export let element: HTMLElement;
 
@@ -46,7 +47,10 @@
   ];
 </script>
 
-<section bind:this={element} class="min-h-[100vh] block md:grid md:grid-cols-2">
+<section
+  bind:this={element}
+  class="min-h-[100vh] block md:grid md:grid-cols-2 md:justify-items-center"
+>
   <div class="flex p-4 md:p-15 flex-col gap-15">
     <article use:fadeIn>
       <h1 class="text-6 md:text-7 leading-9 font-500 mb-3">Немного обо мне</h1>
@@ -71,8 +75,10 @@
       </div>
     </article>
   </div>
-  <div use:fadeIn class="flex p-4 md:p-15 flex-col">
-    <h1 class="text-6 md:text-7 leading-9 font-500">Опыт</h1>
+  <div use:fadeIn={{ threshold: 0.5 }} class="flex p-4 md:p-15 flex-col">
+    <h1 class="md:ml-auto md:mr-auto text-6 md:text-7 leading-9 font-500">
+      Опыт
+    </h1>
+    <TimelineSection />
   </div>
 </section>
-
