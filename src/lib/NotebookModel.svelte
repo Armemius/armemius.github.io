@@ -4,6 +4,7 @@
   import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
   import { OrbitControls } from "three/addons/controls/OrbitControls.js";
   import { Hourglass_full as Hourglass } from "svelte-google-materialdesign-icons";
+  import { fadeIn } from "$lib/animation/fadeIn";
 
   let canvas: HTMLCanvasElement;
   let loaded = false;
@@ -88,7 +89,10 @@
   });
 </script>
 
-<div class="h-0 w-[600px] relative hidden md:flex align-center justify-center">
+<div
+  use:fadeIn
+  class="h-0 w-[600px] relative hidden md:flex align-center justify-center"
+>
   <div
     class="absolute top-[-300px] w-[600px] h-[600px] bg-violet rounded-[50%]"
   ></div>
