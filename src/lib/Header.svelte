@@ -24,14 +24,4 @@
 >
   <BriefInfo {aboutSection} {projectsSection} />
   <NotebookModel />
-  <div
-    use:fadeIn
-    class="absolute opacity-[0.7] bottom-[60px] md:bottom-0 hover:opacity-[1.0] cursor-pointer"
-  >
-    <Arrow
-      on:click={scrollToSection(aboutSection)}
-      class="outline-none"
-      size="64"
-    />
-  </div>
 </section>
