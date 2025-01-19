@@ -75,7 +75,7 @@
 </script>
 
 <section
-  class="w-100 bg-white hover:bg-WhiteSmoke rounded-lg shadow-md p-5 flex flex-col gap-5 m-5 justify-between"
+  class="w-[100%] md:w-100 bg-white hover:bg-WhiteSmoke rounded-lg shadow-md p-5 flex flex-col gap-5 md:m-5 justify-between"
 >
   <img src={image} alt={title} class="w-full h-40 object-cover rounded-lg" />
   <h2 class="text-5 font-500">{title}</h2>
