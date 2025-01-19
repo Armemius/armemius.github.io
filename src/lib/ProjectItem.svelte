@@ -1,11 +1,13 @@
 <script lang="ts">
   import Tooltip from "sv-tooltip";
-  import type { Language } from "$lib/data/projects";
+  import type { Language, Libs } from "$lib/data/projects";
 
   export let title: string;
   export let description: string;
   export let image: string;
-  export let github: string;
+  export let github: string | undefined = undefined;
+  export let page: string | undefined = undefined;
+  export let libs: Libs[] | undefined = [];
   export let languages: Language[];
 
   const languageIcons = {
@@ -35,32 +37,83 @@
     kotlin: "Kotlin",
     matlab: "MATLAB",
   };
+
+  const libIcons = {
+    undefined: "hidden",
+    sdl: "devicon-sdl-plain",
+    glfw: "devicon-glfw-plain",
+    qt: "devicon-qt-plain",
+    gtk: "devicon-gtk-plain",
+    ncurses: "devicon-ncurses-plain",
+    opengl: "devicon-opengl-plain",
+    webgl: "devicon-opengl-plain",
+    vulkan: "devicon-vulkan-plain",
+    directx: "devicon-directx-plain",
+    winapi: "devicon-windows8-original",
+    xlib: "devicon-x11-plain",
+    react: "devicon-react-original",
+    svelte: "devicon-svelte-plain",
+    wasm: "devicon-wasm-original",
+  };
+
+  const libNames = {
+    sdl: "SDL",
+    glfw: "GLFW",
+    qt: "Qt",
+    gtk: "GTK",
+    ncurses: "ncurses",
+    opengl: "OpenGL",
+    webgl: "WebGL",
+    vulkan: "Vulkan",
+    directx: "DirectX",
+    winapi: "WinAPI",
+    xlib: "Xlib",
+    react: "React",
+    svelte: "Svelte",
+    wasm: "WebAssembly",
+  };
 </script>
 
-<section class="p-5 bg-gray-100 rounded-md">
-  <div class="flex flex-col md:flex-row gap-6">
-    <div class="w-full md:w-1/3">
-      <img src={image} alt={title} class="w-full h-auto" />
-    </div>
-    <div class="w-full md:w-2/3">
-      <h2 class="text-5 md:text-6 leading-8 font-500 mb-3">{title}</h2>
-      <p class="leading-6 text-4 md:leading-7 md:text-4 font-350">
-        {description}
-      </p>
-      <div class="flex gap-1 mt-3">
-        {#each languages as language}
-          <Tooltip
-            tip={languageNames[language]}
-            bottom>
-            <i class={`${languageIcons[language]} text-5`}></i>
-          </Tooltip>
-        {/each}
-      </div>
+<section
+  class="w-100 bg-white hover:bg-WhiteSmoke rounded-lg shadow-md p-5 flex flex-col gap-5 m-5 justify-between"
+>
+  <img src={image} alt={title} class="w-full h-40 object-cover rounded-lg" />
+  <h2 class="text-5 font-500">{title}</h2>
+  <p class="text-4 leading-7 font-350">{description}</p>
+  <div class="flex gap-2">
+    {#each languages as language}
+      <Tooltip tip={languageNames[language]} bottom>
+        <i class={`${languageIcons[language]} text-6`}></i>
+      </Tooltip>
+    {/each}
+    {#if libs}
+      {#each libs as lib}
+        <Tooltip tip={libNames[lib as keyof typeof libNames]} bottom>
+          <i class={`${libIcons[lib as keyof typeof libNames]} text-6`}></i>
+        </Tooltip>
+      {/each}
+    {/if}
+  </div>
+  <div class="flex flex-col gap-2 justify-self-end">
+    {#if github}
       <a
         href={github}
         target="_blank"
-        class="text-4 md:text-5 font-350 color-black underline-none mt-3 block ">GitHub</a
+        class="text-4 font-350 no-underline color-black"
       >
-    </div>
+        <i class="devicon-github-original text-5"></i>
+        Ссылка на GitHub
+      </a>
+    {/if}
+    {#if page}
+      <a
+        href={page}
+        target="_blank"
+        class="text-4 font-350 no-underline color-black"
+      >
+        <i class="devicon-ros-original text-5 inline-block"></i>
+        Веб-страница
+      </a>
+    {/if}
   </div>
 </section>

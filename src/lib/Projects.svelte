@@ -49,13 +49,13 @@
   </div>
   <div class="flex flex-wrap gap-7 justify-center">
     {#each projects
-      .filter((it) => search === "" || it.title.includes(search))
+      .filter((it) => search === "" || it.title.toLowerCase().includes(search.toLowerCase()))
       .filter((it) => language === "any" || it.languages.includes(language))
       .filter((it) => target === "any" || it.target === target) as project}
       <ProjectItem {...project} />
     {/each}
     {#if !projects
-      .filter((it) => search === "" || it.title.includes(search))
+      .filter((it) => search === "" || it.title.toLowerCase().includes(search.toLowerCase()))
       .filter((it) => language === "any" || it.languages.includes(language))
       .filter((it) => target === "any" || it.target === target).length}
       <p class="text-4 font-350">Ничего не найдено :(</p>
