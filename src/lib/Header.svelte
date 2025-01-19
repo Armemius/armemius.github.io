@@ -19,14 +19,14 @@
 </script>
 
 <section
-  class="relative grid grid-cols-1 md:grid-cols-2 h-screen items-center justify-items-center pl-[10%] pr-10%"
+  class="relative grid grid-cols-1 md:grid-cols-2 h-screen items-center justify-items-center pl-[3%] pr-[3%] md:pl-[10%] md:pr-[10%]"
   bind:this={element}
 >
   <BriefInfo {aboutSection} {projectsSection} />
   <NotebookModel />
   <div
     use:fadeIn
-    class="absolute opacity-[0.7] bottom-0 hover:opacity-[1.0] cursor-pointer"
+    class="absolute opacity-[0.7] bottom-[60px] md:bottom-0 hover:opacity-[1.0] cursor-pointer"
   >
     <Arrow
       on:click={scrollToSection(aboutSection)}
