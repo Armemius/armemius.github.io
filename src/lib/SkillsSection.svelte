@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Tooltip from "sv-tooltip";
   import { fadeIn } from "./animation/fadeIn";
 
   import SkillItem from "./SkillItem.svelte";
