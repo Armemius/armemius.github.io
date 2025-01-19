@@ -1,3 +1,9 @@
 * {
   font-family: "Roboto", sans-serif;
 }
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
