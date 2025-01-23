@@ -2,6 +2,7 @@ import FRACTALS from "$assets/fractals.jpg";
 import TESSERACTUS from "$assets/tesseractus.jpg";
 import PROCESSOR from "$assets/processor.jpg";
 import COMPUTER from "$assets/computer.jpg";
+import SHELL from "$assets/shell.jpg";
 import INTERPOLATOR from "$assets/interpolator.jpg";
 
 export type Language =
@@ -83,6 +84,15 @@ const projects: Project[] = [
     libs: ["winapi"],
     target: "cli",
     github: "https://github.com/Armemius/WindowsPrimitiveShell",
+  },
+  {
+    title: "MiniShell",
+    description: "Коммандная оболочка для Unix-подобных систем",
+    image: SHELL,
+    languages: ["c", "cpp"],
+    target: "cli",
+    github: "https://github.com/Armemius/MiniShell",
+    page: "https://armemius.github.io/MiniShell/",
   },
   {
     title: "Interpolator",
